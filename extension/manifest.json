@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "ChronoSync",
+  "version": "1.0",
+  "description": "Automatically converts dates and times to the user's local timezone.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

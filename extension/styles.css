@@ -1,0 +1,17 @@
+/* styles.css */
+/* Add styles for highlighting or tooltips if needed by ChronoSync */
+.chrono-sync-date {
+	border-bottom: 1px dotted #555;
+	cursor: help;
+}
+
+.chrono-sync-tooltip {
+	position: absolute;
+	background: #222;
+	color: #fff;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	z-index: 9999;
+	pointer-events: none;
+}
