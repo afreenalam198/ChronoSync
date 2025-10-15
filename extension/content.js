@@ -73,24 +73,11 @@ function findAndReplaceDates() {
 		});
 	}
 
-	function convertToLocalTime(dateString) {
-		// Try to parse the date string
-		let date = Date.parse(dateString);
-		if (isNaN(date)) {
-			// Try with new Date constructor as fallback
-			date = new Date(dateString);
-			if (isNaN(date.getTime())) return 'Unrecognized date';
-		} else {
-			date = new Date(date);
-		}
-		// Format using Intl.DateTimeFormat
-		const formatter = new Intl.DateTimeFormat(undefined, {
-			year: 'numeric', month: 'long', day: 'numeric',
-			hour: '2-digit', minute: '2-digit', second: '2-digit',
-			timeZoneName: 'short'
-		});
-		return formatter.format(date);
-	}
+
+	// Import convertToLocalTime from date-logic.js for browser usage
+	import('./date-logic.js').then(mod => {
+	  window.convertToLocalTime = mod.convertToLocalTime;
+	});
 
 	let tooltip;
 	function handleMouseEnter(e) {
